@@ -17,15 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 import com.devsuperior.hrworker.entities.Worker;
 import com.devsuperior.hrworker.repositories.WorkerRepository;
 
-@RefreshScope 		// colocar essa anotação em toda classe que fizer acesso às configurações ("/configs")
+//colocar essa anotação em toda classe que fizer acesso às configurações ("/configs")
+@RefreshScope 		
 @RestController
 @RequestMapping(value = "/workers")
 public class WorkerResource {
 	
 	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
 	
+	@Autowired
+	// recebe de getConfigs
 	@Value("${test.config}")
-	private String testConfig;
+	private String testConfig; 
 	
 	// objeto com várias informações do contexto da aplicação
 	@Autowired
@@ -49,11 +52,10 @@ public class WorkerResource {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id) {
 		
-		try {
-			Thread.sleep(3000L);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		/*
+		 * try { Thread.sleep(3000L); } catch (InterruptedException e) {
+		 * e.printStackTrace(); }
+		 */
 		
 		logger.info("PORT = " + env.getProperty("local.server.port"));
 		
