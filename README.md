@@ -17,3 +17,11 @@ run eureka-server first and then do the same for the other projects
 
 - http://localhost:8888/hr-worker/test
 - http://localhost:8888/hr-worker/default 
+- http://localhost:8765/hr-worker/workers/configs
+- http://localhost:8765/hr-worker/actuator/refresh (POST)
+
+# endpoints for user
+
+- http://localhost:8765/hr-user/users/2
+- http://localhost:8765/hr-user/users/search?email=leia@gmail.com
+
