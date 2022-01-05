@@ -19,6 +19,7 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private UserFeignClient userFeignClient;
 	
+	// findByEmail == loadUserByUsername 
 	public User findByEmail(String email) {
 		User user = userFeignClient.findByEmail(email).getBody();
 		if (user == null) {

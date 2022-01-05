@@ -13,11 +13,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
-	
+	private BCryptPasswordEncoder passwordEncoder;	
 	@Autowired
 	private UserDetailsService userDetailService;	
 	
+	// configuracao de auth
 	@Override
 	@Autowired
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
