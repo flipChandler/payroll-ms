@@ -17,8 +17,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	private JwtTokenStore tokenStore;
 	
 	private static final String[] PUBLIC = { "/hr-oauth/oauth/token" };
-	private static final String[] OPERATOR = { "/hr-worker/**" }; 				// qlq rota de worker
-	private static final String[] ADMIN = { "/hr-payroll/**", "/hr-user/**" };  // qlq rota de payroll ou user
+	private static final String[] OPERATOR = { "/hr-worker/**" }; 					// qlq rota de worker
+	private static final String[] ADMIN = { "/hr-payroll/**", "/hr-user/**", 
+			"/actuator/**", "/hr-worker/actuator/**", "hr-oauth/actuator/**"  };  	// qlq rota de payroll | user | actuator
 	
 	// a aplicacao consegue ler um token
 	@Override
